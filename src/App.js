@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Config from './config/config.json'
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
         <h1>Header</h1>
       </header>
       <body>
-        <h1>Body</h1>
+        <h1>Hello, {Config.name}!</h1>
       </body>
     </div>
   );
