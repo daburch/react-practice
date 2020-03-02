@@ -9,10 +9,10 @@ function App() {
       <header className="App-header">
         <h1>Transaction Tracker</h1>
       </header>
-      <body>
+      <React.Fragment>
         <h1>Hello, {Config.name}!</h1>
         <AddTransaction />
-      </body>
+      </React.Fragment>
     </div>
   );
 }
