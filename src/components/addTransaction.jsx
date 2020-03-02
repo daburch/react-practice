@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../css/AddTransaction.css";
 
 class addTransaction extends Component {
   render() {
@@ -6,25 +7,24 @@ class addTransaction extends Component {
       <div className="AddTransaction">
         <h3>Add Transaction:</h3>
         <form>
-          <label>
-            Name: <input type="text" name="name" />
-          </label>
-          <br />
-          <label>
-            Cost: <input type="text" name="cost" />
-          </label>
-          <br />
-          <label>
-            Category:
-            <select name="category">
-              <option value="misc">Misc</option>
-              <option value="bills">Bills</option>
-              <option value="food">Food</option>
-              <option value="other">Other</option>
-            </select>
-          </label>
-          <br />
-          <input type="submit" value="Submit" />
+          <div className="transaction-input">
+            <div className="transaction-input-labels">
+              <label>Name: </label>
+              <label>Cost: </label>
+              <label>Category: </label>
+            </div>
+            <div className="transaction-input-fields">
+              <input type="text" name="name" />
+              <input type="text" name="cost" />
+              <select name="category">
+                <option value="misc">Misc</option>
+                <option value="bills">Bills</option>
+                <option value="food">Food</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <input className="transaction-submit" type="submit" value="Submit" />
         </form>
       </div>
     );
