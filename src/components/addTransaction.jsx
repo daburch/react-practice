@@ -5,7 +5,7 @@ class addTransaction extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { name: "", cost: "", category: "" };
+    this.state = { name: "", cost: "", category: "MISC" };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,10 +24,26 @@ class addTransaction extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    fetch("https://reactnative.dev/movies.json")
-      .then(resp => resp.json())
-      .then(json => json.movies[0])
-      .then(movie => console.log(movie.title));
+    if (this.state.name === "" || this.state.cost === "") {
+      alert("missing required data!");
+    } else {
+      fetch("http://localhost:8080/api/v1/transaction", {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: this.state.name,
+          cost: this.state.cost,
+          category: this.state.category.toUpperCase()
+        })
+      })
+        .then(resp => resp.status)
+        .then(status => console.log(status));
+    }
+
+    this.setState({
+      name: "",
+      cost: ""
+    });
   }
 
   render() {
@@ -42,8 +58,18 @@ class addTransaction extends Component {
               <label>Category: </label>
             </div>
             <div className="transaction-input-fields">
-              <input name="name" type="text" onChange={this.handleChange} />
-              <input name="cost" type="text" onChange={this.handleChange} />
+              <input
+                name="name"
+                type="text"
+                value={this.state.name}
+                onChange={this.handleChange}
+              />
+              <input
+                name="cost"
+                type="text"
+                value={this.state.cost}
+                onChange={this.handleChange}
+              />
               <select name="category" onChange={this.handleChange}>
                 <option value="misc">Misc</option>
                 <option value="bills">Bills</option>
