@@ -37,13 +37,22 @@ class addTransaction extends Component {
         })
       })
         .then(resp => resp.status)
-        .then(status => console.log(status));
+        .then(status => {
+          if (status !== 201) {
+            alert(
+              "Failed to create transaction. Please check your input and try again."
+            );
+          } else {
+            this.setState({
+              name: "",
+              cost: ""
+            });
+          }
+        })
+        .catch(() => {
+          alert("Transaction server unavailable. Please try again later.");
+        });
     }
-
-    this.setState({
-      name: "",
-      cost: ""
-    });
   }
 
   render() {
@@ -84,5 +93,7 @@ class addTransaction extends Component {
     );
   }
 }
+
+function createTransaction() {}
 
 export default addTransaction;
