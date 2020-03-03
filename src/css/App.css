@@ -12,3 +12,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.App-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddTransaction {
+  padding-bottom: 10px;
+}

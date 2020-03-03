@@ -1,0 +1,17 @@
+.Transaction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px;
+}
+
+.transaction-fields {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+}
+
+.transaction-field {
+  padding: 5px;
+}
