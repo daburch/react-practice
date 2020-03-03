@@ -68,9 +68,7 @@ class App extends Component {
       })
         .then(resp => {
           if (resp.status !== 201) {
-            alert(
-              "Failed to create transaction. Please check your input and try again."
-            );
+            throw Response.json();
           } else {
             return resp.json();
           }
@@ -86,7 +84,9 @@ class App extends Component {
           });
         })
         .catch(() => {
-          alert("Transaction server unavailable. Please try again later.");
+          alert(
+            "Unable to create transaction. Please check your input or try again later."
+          );
         });
     }
   }
