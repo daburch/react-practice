@@ -10,8 +10,18 @@
   display: flex;
   justify-content: space-between;
   border: 2px solid black;
+  align-items: center;
 }
 
 .transaction-field {
   padding: 5px;
+  min-width: 30%;
+}
+
+.transaction-name {
+  text-align: left;
+}
+
+.transaction-category {
+  text-align: right;
 }

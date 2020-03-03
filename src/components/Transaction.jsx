@@ -1,24 +1,20 @@
 import React, { Component } from "react";
 import "../css/Transaction.css";
 
-class Transaction extends Component {
-  state = {
-    name: this.props.name,
-    cost: this.props.cost,
-    category: this.props.category
-  };
-
-  render() {
-    return (
-      <div className="Transaction">
-        <div className="transaction-fields">
-          <p className="transaction-field">{this.state.name}</p>
-          <p className="transaction-field">{this.state.cost}</p>
-          <p className="transaction-field">{this.state.category}</p>
+const Transaction = props => {
+  return (
+    <div className="Transaction">
+      <div className="transaction-fields">
+        <div className="transaction-field">
+          <p className="transaction-name">{props.name}</p>
+        </div>
+        <div className="transaction-field">{props.cost}</div>
+        <div className="transaction-field">
+          <p className="transaction-category">{props.category}</p>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Transaction;

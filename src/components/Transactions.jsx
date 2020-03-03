@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import Transaction from "./Transaction";
-import "../css/Transactions.css";
 
 const Transactions = props => {
   return (
