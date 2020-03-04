@@ -8,21 +8,21 @@ const AddTransaction = props => {
       <form onSubmit={props.onSubmit}>
         <div className="transaction-input">
           <div className="transaction-input-labels">
-            <label>Name: </label>
-            <label>Cost: </label>
+            <label>Description: </label>
+            <label>Amount: </label>
             <label>Category: </label>
           </div>
           <div className="transaction-input-fields">
             <input
-              name="name"
+              name="description"
               type="text"
-              value={props.name}
+              value={props.description}
               onChange={props.onChange}
             />
             <input
-              name="cost"
+              name="amount"
               type="text"
-              value={props.cost}
+              value={props.amount}
               onChange={props.onChange}
             />
             <select name="category" onChange={props.onChange}>

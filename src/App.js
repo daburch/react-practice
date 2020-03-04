@@ -6,8 +6,8 @@ import Transactions from "./components/Transactions";
 
 class App extends Component {
   state = {
-    name: "",
-    cost: "",
+    description: "",
+    amount: "",
     category: "MISC",
     transactions: []
   };
@@ -61,8 +61,8 @@ class App extends Component {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: this.state.name,
-          cost: this.state.cost,
+          description: this.state.description,
+          amount: this.state.amount,
           category: this.state.category.toUpperCase()
         })
       })
@@ -78,8 +78,8 @@ class App extends Component {
           updatedTransactions.unshift(json);
 
           this.setState({
-            name: "",
-            cost: "",
+            description: "",
+            amount: "",
             transactions: updatedTransactions
           });
         })
@@ -100,8 +100,8 @@ class App extends Component {
         <div className="App-body">
           <h1>Hello, {Config.name}!</h1>
           <AddTransaction
-            name={this.state.name}
-            cost={this.state.cost}
+            description={this.state.description}
+            amount={this.state.amount}
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
           />
