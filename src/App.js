@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/api/v1/transaction", {
+    fetch("http://localhost:8089/api/v1/transaction", {
       method: "get"
     })
       .then(resp => {
@@ -57,7 +57,7 @@ class App extends Component {
     if (this.state.name === "" || this.state.cost === "") {
       alert("missing required data!");
     } else {
-      fetch("http://localhost:8080/api/v1/transaction", {
+      fetch("http://localhost:8089/api/v1/transaction", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -100,7 +100,7 @@ class App extends Component {
         <div className="App-body">
           <h1>Hello, {Config.name}!</h1>
           <AddTransaction
-            description={this.state.description}
+            description={this.state.amount}
             amount={this.state.amount}
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
