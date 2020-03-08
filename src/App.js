@@ -100,7 +100,7 @@ class App extends Component {
         <div className="App-body">
           <h1>Hello, {Config.name}!</h1>
           <AddTransaction
-            description={this.state.amount}
+            description={this.state.description}
             amount={this.state.amount}
             onSubmit={this.handleSubmit}
             onChange={this.handleChange}
